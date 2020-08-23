@@ -19,7 +19,7 @@ def bot():
     responded = False
     if "hi" in incoming_msg:
         friend_id, friend_name, friend_source = get_friend()
-        msg_to_send = f"Do you want to speak to {friend_name}({friend_source})?"
+        msg_to_send = f"Welcome back Sharan. Do you want to speak to {friend_name} ({friend_source})?"
         update_considering(friend_id, True)
         msg.body(msg_to_send)
         responded = True
@@ -35,7 +35,7 @@ def bot():
         update_considering(friend_id, False)
         mark_as_skipped(friend_id)
         friend_id, friend_name, friend_source = get_friend()
-        msg_to_send = f"Do you want to speak to {friend_name}({friend_source})?"
+        msg_to_send = f"Okay, that person is skipped. Do you want to speak to {friend_name}({friend_source})?"
         update_considering(friend_id, True)
         msg.body(msg_to_send)
         responded = True
@@ -44,7 +44,7 @@ def bot():
         update_considering(friend_id, False)
         mute_person(friend_id)
         friend_id, friend_name, friend_source = get_friend()
-        msg_to_send = f"Do you want to speak to {friend_name}({friend_source})?"
+        msg_to_send = f"Okay, that person is muted for good. You won't see them again. Do you want to speak to {friend_name}({friend_source})?"
         update_considering(friend_id, True)
         msg.body(msg_to_send)
         responded = True
