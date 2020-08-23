@@ -11,6 +11,10 @@ The application currently supports 4 different commands:
 
 - `mute` to remove the person from the table
 
-Connect is built using Twilio as the SMS proivder, powered by a Flask Server hosted on Heroku, which connects to [Airtable](http://airtable.com/), the database. Data was sourced from Google Contacts, iCloud Contacts, and my Facebook Friends List. Live connection to these sources is a To-Do for the future.
+Connect is built using Twilio, Flask, Heroku, and Airtable. 
+
+Twilio serves as the SMS proivder, which is powerved via a webhook to the Flask server on Heroku. The server also interacts directly with [Airtable](http://airtable.com/), which functions as the database.
+
+Data was sourced from Google Contacts, iCloud Contacts, and my Facebook Friends List. Live connection to these sources is a To-Do for the future.
 
 ![Screenshot](screenshot.jpeg)
