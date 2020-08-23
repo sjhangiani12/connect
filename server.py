@@ -7,9 +7,9 @@ from airtable_manager import get_friend, update_considering, get_considered, mar
 
 app = Flask(__name__)
 
-# @app.route("/", methods=["GET"])
-# def ping():
-#     return "Jarvis, start the engines."
+@app.route("/", methods=["GET"])
+def ping():
+    return "Jarvis, start the engines."
 
 @app.route("/bot", methods=["POST"])
 def bot():
