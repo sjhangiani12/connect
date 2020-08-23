@@ -7,9 +7,9 @@ from airtable_manager import get_friend, update_considering, get_considered, mar
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
-def ping():
-    return 'Jarvis, start the engines.'
+# @app.route('/', methods=['GET'])
+# def ping():
+#     return 'Jarvis, start the engines.'
 
 @app.route('/bot', methods=['POST'])
 def bot():
@@ -23,7 +23,7 @@ def bot():
         update_considering(friend_id, True)
         msg.body(msg_to_send)
         responded = True
-    if 'yes' in incoming_msg:
+    elif 'yes' in incoming_msg:
         friend_id, friend_name, friend_source = get_considered()
         update_considering(friend_id, False)
         mark_as_talked(friend_id, True)
@@ -55,3 +55,5 @@ def bot():
 
 if __name__ == '__main__':
     app.run()
+
+# serve(app, host='0.0.0.0', port=3000)
